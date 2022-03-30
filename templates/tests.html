@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block category %}
+    <!-- Empty special -->
+{% endblock %}
+
+{% block content %}
+    <div id="content_header"></div>
+    <div id="site_content">
+        <table>
+            <tr>
+                <th>№ вопроса из базы</th>
+                <th style="width: 65%;">Вопрос</th>
+                <th>Поле ввода ответа</th>
+                <th>Правильный ответ</th>
+                <th>Ссылка на НД</th>
+            </tr> <!--ряд с ячейками заголовков-->
+            {% for row in table %}
+                <tr>
+
+                    <td>
+                        {{ row.0 }}
+                    </td>
+                    <td>
+                        {{ row.2 }}
+                    </td>
+                    <td>
+                        <input type="text" placeholder="цифра" required/>
+                    </td>
+                    <td>
+                        {{ row.3 }}
+                    </td>
+                    <td>
+                        {{ row.4 }}
+                    </td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

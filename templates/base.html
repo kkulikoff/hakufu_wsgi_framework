@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+
+<head>
+<title>
+    {% block title %}
+        NTD Library
+    {% endblock %}
+</title>
+    <meta name="description" content="Небольшая библиотека нормативной литературы по нефтегазоснабжению"/>
+    <meta name="keywords" content="нефть, газ, нефтянка, библиотека, литература, нормативка, нтд, тесты"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="../static/style/style.css"/>
+    {% endblock %}
+    {% block up_js %}
+    {% endblock %}
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+        <div id="logo">
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href='/'>Hakufu<span class="logo_colour">library</span></a></h1>
+                <h2>Библиотека нормативно-технической документации</h2>
+            </div>
+        </div>
+        {% block menu %}
+            {% include "inc_menu.html" %}
+        {% endblock %}
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+        {% block category %}
+            {% include 'inc_category.html' %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="content_footer"></div>
+    {% block footer %}
+        {% include 'inc_footer.html' %}
+    {% endblock %}
+</div>
+</body>
+</html>
